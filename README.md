@@ -13,7 +13,7 @@
 <img title="Forks" src="https://img.shields.io/github/forks/TralahM/pycctek?color=green&style=flat-square">
 
 # pycctek.
-
+Issuer Identification Number Database and Verification Utility Library. Luhn Algorithm, BIN Checker, Random Credit Card Generators.
 
 [![TralahTek](https://img.shields.io/badge/Organization-TralahTek-black.svg?style=for-the-badge&logo=github)](https://github.com/TralahTek)
 [![TralahM](https://img.shields.io/badge/Engineer-TralahM-blue.svg?style=for-the-badge&logo=github)](https://github.com/TralahM)
@@ -26,6 +26,7 @@
 # How to Install
 ```bash
 # In terminal do:
+$ pip install pycctek
 ```
 
 ## Building from Source for Developers
@@ -33,6 +34,7 @@
 ```console
 $ git clone https://github.com/TralahM/pycctek.git
 $ cd pycctek
+$ python setup.py install
 ```
 
 # Contributing
