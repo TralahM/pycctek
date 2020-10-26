@@ -8,11 +8,15 @@ from yaml import load  # ,dump
 
 # from pprint import pprint
 import json
+import os
 
 try:
     from yaml import CLoader as Loader  # ,CDumper as Dumper
 except ImportError:
     from yaml import Loader  # ,Dumper
+
+
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 class InvalidIIN(Exception):
@@ -27,7 +31,7 @@ def build_iin_path(iin):
         iin = str(iin)
     if not len(iin) >= 4:
         raise InvalidIIN("Issuer Identification Number Too Short < 6")
-    return f"data/{iin[0]}/{iin[:4]}.yml"
+    return os.path.join(CURRENT_DIR, f"data/{iin[0]}/{iin[:4]}.yml")
 
 
 def load_iin(iin):
