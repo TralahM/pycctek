@@ -3,7 +3,7 @@
 
 import re
 import random
-import dataloader
+from . import dataloader
 
 
 def bin_checker(card):
