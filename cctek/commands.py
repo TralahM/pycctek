@@ -35,9 +35,15 @@ def random_card(args):
     return
 
 
+def usage(*args, **kwargs):
+    """Use Default function to handle empty namespace."""
+    return
+
+
 def main():
     """Run Main Command Executor."""
     parser = argparse.ArgumentParser()
+    parser.set_defaults(func=usage)
     parser.add_argument(
         "--version", action="version", version=f"cctek {cctek.__version__}"
     )
@@ -48,7 +54,7 @@ def main():
         aliases=[
             "rc",
         ],
-        help="""Run Luhn Algorithm checks on the card numbers.""",
+        help="""Generate a random credit card number of the specified type.""",
     )
     random_card_parser.set_defaults(func=random_card)
     random_card_parser.add_argument(
