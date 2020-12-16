@@ -20,6 +20,69 @@ Issuer Identification Number Database and Verification Utility Library. Luhn Alg
 [![TralahM](https://img.shields.io/badge/Maintainer-TralahM-green.svg?style=for-the-badge&logo=github)](https://github.com/TralahM)
 
 # Documentation
+## Installation
+```bash
+# In terminal do:
+$ pip install pycctek
+```
+
+## Building from Source for Developers
+
+```console
+$ git clone https://github.com/TralahM/pycctek.git
+$ cd pycctek
+$ python setup.py install
+```
+
+
+## Usage
+
+```
+usage: cctek [-h] [--version] {random_card,rc,luhn,ln,lookup,lk} ...
+
+positional arguments:
+  {random_card,rc,luhn,ln,lookup,lk}
+    random_card (rc)    Generate Random Credit Card Number.
+    luhn (ln)           Run Luhn Algorithm checks on the card numbers.
+    lookup (lk)         Lookup Issuer Identification Numbers.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+
+```
+### Generate Random Credit card Number.
+
+```
+
+usage: cctek random_card [-h] {amex,diners,discover,enroute,jcb,mastercard,visa}
+
+positional arguments:
+  {amex,diners,discover,enroute,jcb,mastercard,visa}
+
+optional arguments:
+  -h, --help            show this help message and exit
+```
+### Validate Credit Card Numbers with Luhn's Algorithm.
+```
+usage: cctek luhn [-h] credit_card_numbers) [credit_card_number(s ...]
+
+positional arguments:
+  credit_card_number(s) Credit Card Numbers
+
+```
+
+### Lookup BINS
+
+```
+usage: cctek lookup [-h] BINs) [BIN(s ...]
+
+positional arguments:
+  BIN(s)      Credit Card Number or Bank/Issuer Identification Number(first 6 digits) to Lookup.
+
+optional arguments:
+  -h, --help  show this help message and exit
+```
 
 [![Documentation](https://img.shields.io/badge/Docs-pycctek-blue.svg?style=for-the-badge)](https://github.com/TralahM/pycctek)
 
@@ -77,20 +140,6 @@ It is described in U.S. Patent No. 2,950,048, filed on January 6, 1954, and gran
 
 [Read The Wikipedia Page for a more comprehensive description of Luhn's
 Algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm)
-
-# How to Install
-```bash
-# In terminal do:
-$ pip install pycctek
-```
-
-## Building from Source for Developers
-
-```console
-$ git clone https://github.com/TralahM/pycctek.git
-$ cd pycctek
-$ python setup.py install
-```
 
 # Contributing
 [See the Contributing File](CONTRIBUTING.rst)
