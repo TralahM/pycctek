@@ -37,10 +37,13 @@ def build_iin_path(iin):
 def load_iin(iin):
     """Return a Python Object from the Loaded Yaml Data File."""
     path = build_iin_path(iin)
-    with open(path, "r") as fl:
-        document = load(fl, Loader=Loader)
+    try:
+        with open(path, "r") as fl:
+            document = load(fl, Loader=Loader)
 
-    return document
+        return document
+    except Exception:
+        return {}
 
 
 if __name__ == "__main__":
